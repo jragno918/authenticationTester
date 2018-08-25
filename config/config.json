@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Thor_2012",
+    "database": "auth_2",
+    "port": "",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": "Sequelize.Op"
+  },
+  "test": {
+    "username": "root",
+    "password": "Thor_2012",
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "Thor_2012",
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
