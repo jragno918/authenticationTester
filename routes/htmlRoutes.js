@@ -1,15 +1,26 @@
-var path = require('path');
+var path = require("path");
 
-module.exports = function(app){
-  app.get("/", function(req,res){
-    res.sendFile(path.join(__dirname, "../public/signup.html"))
-  });
+var isAuthenticated = require('../helpers/isAuthenticated');
 
-  app.get("/login", function(req,res){
-    res.sendFile(path.join(__dirname, "../public/login.html"))
-  });
+module.exports = function (app) {
 
-  app.get("/members", function(req,res){
-    res.sendFile(path.join(__dirname, "../public/members.html"))
-  });
+    app.get("/", (req,res)=>{
+        if(req.user){
+            res.redirect('members')
+        };
+        res.sendFile(path.join(__dirname, "../public/signup.html"));
+    });
+
+    app.get("/login", (req,res)=>{
+        if(req.user){
+            res.redirect('members')
+        };
+        res.sendFile(path.join(__dirname, "../public/login.html"));
+    });
+
+    app.get("/members",isAuthenticated, (req,res)=>{
+        res.sendFile(path.join(__dirname, "../public/members.html"));
+    });
+
+
 }
