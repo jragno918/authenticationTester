@@ -1,7 +1,7 @@
 // NPM Packages
 var express = require('express');
 var bodyParser = require('body-parser');
-var passport = require('')
+var passport = require('passport')
 
 // Config
 var PORT = process.env.port || 8080;
